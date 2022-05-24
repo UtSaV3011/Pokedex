@@ -16,7 +16,6 @@ export class HomePage implements OnInit {
    newArr;
   constructor(public api: ApiService, private router: Router) {}
   show(url){
-       console.log(url);
        this.router.navigate(['/home/details',url]);
   }
   ngOnInit() {
@@ -32,7 +31,6 @@ export class HomePage implements OnInit {
    }
 
   loadData(event){
-    console.log('Done');
     setTimeout(()=>{
       this.increase();
       event.target.complete();

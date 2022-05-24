@@ -18,8 +18,7 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.api.getPokemonDetail(this.route.snapshot.params.id).subscribe((res: any)=>{console.log(res);this.details=res;});
-    console.log(this.route.snapshot.params.id);
+    this.api.getPokemonDetail(this.route.snapshot.params.id).subscribe((res: any)=>{this.details=res;});
   }
 
 }
