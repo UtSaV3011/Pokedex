@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar class="none">
+    <ion-title class="title">About {{details?.forms[0].name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card">
+    <div class="flex">
+      <ion-icon (click)="back()" class="button" name="chevron-back-circle-outline"></ion-icon>
+      <ion-card-title class="heading">
+        {{details?.forms[0].name}}
+      </ion-card-title>
+    </div>
+    <ion-card-content>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Abilites
+        </ion-title>
+        <li *ngFor="let abiliti of details?.abilities" class="li">
+          {{abiliti.ability.name}}
+        </li>
+      </ion-card>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Forms
+        </ion-title>
+        <li *ngFor="let abiliti of details?.forms" class="li">
+          {{abiliti.name}}
+        </li>
+      </ion-card>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Height
+        </ion-title>
+        <li class="li">
+          {{details?.height}} Decimeter
+        </li>
+      </ion-card>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Species
+        </ion-title>
+        <li class="li">
+          {{details?.species.name}}
+        </li>
+      </ion-card>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Type
+        </ion-title>
+        <li *ngFor="let type of details?.types" class="li">
+          {{type.type.name}}
+        </li>
+      </ion-card>
+      <ion-card class="detailcard">
+        <ion-title class="ability">
+          Weight
+        </ion-title>
+        <li class="li">
+          {{details?.weight}} Dekagram
+        </li>
+      </ion-card>
+      <ion-accordion-group class="accordian">
+        <ion-accordion class="main" value="Moves">
+          <ion-item slot="header">
+            <ion-label class="ability">Moves</ion-label>
+          </ion-item>
+          <ion-list slot="content">
+            <li class="li margin" *ngFor="let move of details?.moves">
+              {{move.move.name}}
+            </li>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
